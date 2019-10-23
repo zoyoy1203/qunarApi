@@ -1,0 +1,20 @@
+{
+  "name": "qunarapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zoyoy",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "cheerio": "^1.0.0-rc.3",
+    "glob": "^7.1.4",
+    "koa": "^2.10.0",
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.7.5",
+    "puppeteer": "^1.20.0"
+  }
+}
