@@ -11,7 +11,8 @@ const createRequest = (method, url, data, options) => {
             url:url,
             headers: {
                 "Accept": "application/json",
-                "X-Requested-With": "XMLHttpRequest"
+                "X-Requested-With": "XMLHttpRequest",
+                "User-Agent":" Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1"
             },
             body: queryString.stringify(data)  //stringify这个方法是将一个对象序列化成一个字符串 body：需要传送的数据
         }
