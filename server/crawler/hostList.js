@@ -7,6 +7,19 @@ const sleep = (time) => new Promise(resolve => {
     setTimeout(resolve, time)
 })
 
+// 获取参数
+function getvar(url,par){
+    var urlsearch = url.split('?');
+    pstr = urlsearch[1].split('&');
+    for (var i = pstr.length - 1; i >= 0; i--) {
+        var tep = pstr[i].split("=");
+        if(tep[0] == par){
+            return tep[1];
+        }
+    }
+    return(false);
+}	
+
 //定义页面内容及Jquery,数据列表
 var content , $
 var result = []
@@ -80,10 +93,13 @@ process.on('message', async (cities) => {
             var comment_num = item.find('a .mp-product-info .mp-product-taglist .mp-product-light:nth-child(3)').text()
             var price = item.find('a .mp-product-info .mp-product-priceinfo span .mp-product-quanrpricenum').text()
         
-            var name = item.find('a .mp-comments-con .mp-comments-item .mp-content-level span:nth-child(2)').text()
+            var name = item.find('a .mp-comments-con .mp-comments-item .mp-content-level>span:nth-child(2)').text()
             var date = item.find('a .mp-comments-con .mp-comments-item .mp-content-level .mp-comments-date').text()
             var comment_text = item.find('a .mp-comments-con .mp-comments-item .mp-comments-text').text()
-            
+           
+            var url = item.find('a').attr('href')
+            var id = url.match(/detail_(\S*).html/)[1]
+
             var imgs = item.find('a .mp-comments-con .mp-comments-item div:nth-child(4)>div img')
             for(let j=0; j<imgs.length; j++){
                 var c_img = $(item.find('a .mp-comments-con .mp-comments-item div:nth-child(4)>div').children('img')[j]).attr('src')
@@ -98,6 +114,7 @@ process.on('message', async (cities) => {
             }
             var comment_img = []
             sightGroup.push({
+                id,
                 img,
                 title,
                 like_num,
@@ -121,10 +138,13 @@ process.on('message', async (cities) => {
             var comment_num = item.find('a .mp-product-info .mp-product-taglist .mp-product-light:nth-child(3)').text()
             var price = item.find('a .mp-product-info .mp-product-priceinfo span .mp-product-quanrpricenum').text()
         
-            var name = item.find('a .mp-comments-con .mp-comments-item .mp-content-level span:nth-child(2)').text()
+            var name = item.find('a .mp-comments-con .mp-comments-item .mp-content-level>span:nth-child(2)').text()
             var date = item.find('a .mp-comments-con .mp-comments-item .mp-content-level .mp-comments-date').text()
             var comment_text = item.find('a .mp-comments-con .mp-comments-item .mp-comments-text').text()
             
+            var url = item.find('a').attr('href')
+            var id = getvar(url,'spuId')
+
             var imgs = item.find('a .mp-comments-con .mp-comments-item div:nth-child(4)>div img')
             for(let j=0; j<imgs.length; j++){
                 var c_img = $(item.find('a .mp-comments-con .mp-comments-item div:nth-child(4)>div').children('img')[j]).attr('src')
@@ -140,6 +160,7 @@ process.on('message', async (cities) => {
             }
             var comment_img = []
             daytripGroup.push({
+                id,
                 img,
                 title,
                 like_num,

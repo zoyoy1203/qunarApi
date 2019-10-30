@@ -4,6 +4,9 @@ const mongoose = require('mongoose')
 const { resolve } = require('path')
 const { connect, initSchemas } = require('./database/init')
 
+
+
+
 const router = require('./routes')
 
 ;(async () => {
@@ -16,6 +19,7 @@ const router = require('./routes')
     // require('./tasks/cities')
     // require('./tasks/citydetail')
     // require('./tasks/hostList')
+    // require('./tasks/addrDetail')
 })()
 
 const app = new Koa()
@@ -24,4 +28,7 @@ app
     .use(router.routes())
     .use(router.allowedMethods)
 
-app.listen(3000)
+
+
+
+app.listen(4000)

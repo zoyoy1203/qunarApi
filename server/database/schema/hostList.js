@@ -9,6 +9,7 @@ const hostListSchema = new Schema({
     imgbg:String,
     toptitle:String,
     sightGroup:[{
+        id:String,
         img:String,
         title:String,
         like_num:Number,
@@ -22,6 +23,7 @@ const hostListSchema = new Schema({
         }
     }],
     daytripGroup:[{
+        id:String,
         img:String,
         title:String,
         like_num:Number,

@@ -16,6 +16,7 @@ const CityDetailSchema = new Schema({
         ],
         hostList:[
             {
+                id:String,
                 img:String,
                 title:String,
                 price:Number
@@ -24,6 +25,7 @@ const CityDetailSchema = new Schema({
 
         likeList:[
             {
+                id:String,
                 img:String,
                 tag:String,
                 title:String,
@@ -36,6 +38,7 @@ const CityDetailSchema = new Schema({
         ],
         weekendTrip:[
             {
+                id:String,
                 img:String,
                 title:String,
                 desc:String
