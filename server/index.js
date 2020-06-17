@@ -20,6 +20,7 @@ const router = require('./routes')
     // require('./tasks/citydetail')
     // require('./tasks/hostList')
     // require('./tasks/addrDetail')
+    // require('./tasks/addrDetail-Imgs')
 })()
 
 const app = new Koa()
