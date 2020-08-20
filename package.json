@@ -9,7 +9,7 @@
   "author": "zoyoy",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "cheerio": "^1.0.0-rc.3",
     "glob": "^7.1.4",
     "koa": "^2.10.0",
